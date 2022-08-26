@@ -798,9 +798,23 @@ GET /_cat/nodes?v
 
 GET /_cat/nodeattrs?v
 
-### # verificando quantos documentos tem no cluster
+### # Setando a configuração de alta disponibilidade
 
-GET /_cat/count?v
+PUT _cluster/settings
+{
+  "persistent": {
+    "cluster": {
+      "routing": {
+        "allocation.awareness.attributes": ["rack"],
+        "allocation.awareness.force": {
+          "rack": {
+            "values": ["r1","r2"]
+          }
+        }
+      }
+    }
+  }
+}
 
 ### # verificando quantos documentos tem no cluster
 
@@ -816,3 +830,5 @@ GET _cat/allocation/<node_id>
 
 GET /_cat/segments/<index>
 GET _cat/segments?v
+
+

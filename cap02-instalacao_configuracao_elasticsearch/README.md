@@ -42,10 +42,7 @@ Acesse a máquina virtual e execute os comandos abaixo, um por vez:
     wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/.env
     docker compose up -d
 
-Depois de instalado o cluster, abra o navegador web acesse a URL http://localhost:5601
-Usuário: elastic
-Pass: elastic123456
-
+Depois de instalado o cluster, abra o navegador web acesse a URL http://localhost:5601 com o usuário: elastic e senha: elastic123456
 
 ## Importando os datasets para o Elastic
 

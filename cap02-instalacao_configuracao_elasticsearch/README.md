@@ -1,6 +1,6 @@
 # ELASTIC SEARCH - CONTAINERS LAB
 
-## Instale o Virtualbox e crie duas VMs
+## Instalando o Virtualbox
 * Instale no Virtualbox: https://download.virtualbox.org/virtualbox/6.1.36/VirtualBox-6.1.36-152435-Win.exe
 * No Virtualbox, crie uma rede virtual no menu Arquivo, Preferências, Rede, botão "Acrescentar uma nova rede NAT"
 * Crie uma VM no virtualbox do tipo Linux - Ubuntu(64-bit) com pelo menos 16Gb RAM e 100Gb de disco
@@ -68,4 +68,5 @@ Dentro da pasta ~/elastic do servidor, faça o download dos bancos de dados em f
 ### Testando as consultas nos índices criados
 
 Acesse o arquivo abaixo e teste as consultas nele contidas pelo Dev Tools:
+
 https://github.com/romulorm/elk-docs/blob/master/cap02-instalacao_configuracao_elasticsearch/03-apis_de_operacao_e_query_dsl.txt

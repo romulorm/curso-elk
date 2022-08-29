@@ -22,21 +22,20 @@
 
 ## Defina a memória virtual
 
-sysctl -w vm.max_map_count=262144
-echo "vm.max_map_count=262144" >> /etc/sysctl.conf
+        sysctl -w vm.max_map_count=262144
+        echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 
 ##  Caso esteja utilizando um usuário não-ROOT, adicione-o ao grupo docker
-sudo usermod -aG docker $USER
+        sudo usermod -aG docker $USER
 
 ## Preparando os arquivos docker-compose e .env que criarão o cluster
-mkdir ~/elastic
-dnf install wget
-wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/docker-compose.yml
-wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/.env
+        mkdir ~/elastic
+        dnf install wget
+        wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/docker-compose.yml
+        wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/.env
+        docker compose up -d
 
-docker compose up -d
-
-Do navegador em outra VM na mesma rede, acesse a URL http://ip_do_almalinux:5601
+Do navegador web, em outra VM na mesma rede, acesse a URL http://ip_do_almalinux:5601
 Usuário: elastic
 Pass: elastic123456
 
@@ -45,11 +44,11 @@ Importando os datasets para o Elastic
 --------------------------------------
 
 Dentro da pasta elastic:
-wget https://github.com/romulorm/elk-docs/raw/master/datasets/accounts.json
-wget https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp.json
-wget https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp-data.json
-wget https://github.com/romulorm/elk-docs/raw/master/datasets/movie.json
-wget https://github.com/romulorm/elk-docs/raw/master/datasets/movie-data.json
+        wget https://github.com/romulorm/elk-docs/raw/master/datasets/accounts.json
+        wget https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp.json
+        wget https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp-data.json
+        wget https://github.com/romulorm/elk-docs/raw/master/datasets/movie.json
+        wget https://github.com/romulorm/elk-docs/raw/master/datasets/movie-data.json
 
 POST /banco/_doc/_bulk?pretty&refresh
 -binary @accounts.json

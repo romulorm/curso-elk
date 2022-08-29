@@ -6,7 +6,7 @@
 
 ## Instalando o Ubuntu Desktop
 * Puxe a .iso do Ubuntu Desktop do link: https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso
-* Crie uma VM no virtualbox do tipo Linux - Ubuntu(64-bit) com pelo menos 16Gb RAM e 100Gb de disco
+* Crie uma VM no virtualbox do tipo Linux - Ubuntu(64-bit) com pelo menos 12Gb RAM e 80Gb de disco
 * Nas configurações de rede da VM, escolha a rede NAT criada anteriormente.
 * Vá no menu da máquina virtual, acesse "Dispositivos" -> "Discos óticos" -> "Escolher uma imagem de disco". Aponte para o arquivo ubuntu-22-xxx.iso.
 * Inicie a VM para iniciar a instalação

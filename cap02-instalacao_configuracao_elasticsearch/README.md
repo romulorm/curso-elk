@@ -1,15 +1,12 @@
 # ELASTIC SEARCH - CONTAINERS LAB
 
 
-
 ## Install Alma Linux 9
 
-Instale no Virtualbox: https://download.virtualbox.org/virtualbox/6.1.36/VirtualBox-6.1.36-152435-Win.exe
-Crie uma VM no virtualbox do tipo Linux - Redhat 9 com pelo menos 8Gb RAM e 80Gb de disco
-
-Puxe a .iso do Alma Linux 9 e 
-Alma Linux 9: https://mirrors.almalinux.org/isos/x86_64/9.0.html
-
+* Instale no Virtualbox: https://download.virtualbox.org/virtualbox/6.1.36/VirtualBox-6.1.36-152435-Win.exe
+* Crie uma VM no virtualbox do tipo Linux - Redhat(64-bit) com pelo menos 16Gb RAM e 100Gb de disco
+* Puxe a .iso do Alma Linux 9 do link abaixo Alma Linux 9: https://mirrors.almalinux.org/isos/x86_64/9.0.html
+* Instale o S.O. na máquina virtual criada no passo anterior indo no menu Dispositivos (da VM), Discos óticos, Escolher uma imagem de disco. Aponte para o arquivo .iso.
 
 ## Install Docker
 

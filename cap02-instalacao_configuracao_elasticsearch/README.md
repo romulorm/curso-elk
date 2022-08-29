@@ -37,7 +37,7 @@ Acesse a máquina virtual e execute os comandos abaixo, um por vez:
     su - seu_usuario
 
 ## Preparando os arquivos docker-compose e .env que criarão o cluster
-    mkdir ~/elastic
+    mkdir ~/elastic && cd ~/elastic
     wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/docker-compose.yml
     wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/.env
     docker compose up -d

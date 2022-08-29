@@ -3,12 +3,12 @@
 ## Instalando o Virtualbox
 * Instale no Virtualbox: https://download.virtualbox.org/virtualbox/6.1.36/VirtualBox-6.1.36-152435-Win.exe
 * No Virtualbox, crie uma rede virtual no menu Arquivo, Preferências, Rede, botão "Acrescentar uma nova rede NAT"
-* Crie uma VM no virtualbox do tipo Linux - Ubuntu(64-bit) com pelo menos 16Gb RAM e 100Gb de disco
 
 ## Install Ubuntu Desktop
 * Puxe a .iso do Ubuntu Desktop do link: https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso
+* Crie uma VM no virtualbox do tipo Linux - Ubuntu(64-bit) com pelo menos 16Gb RAM e 100Gb de disco
 * Nas configurações de rede da VM, escolha a rede NAT criada anteriormente.
-* Instale o S.O. na  máquina virtual criada, indo no menu Dispositivos (da VM), Discos óticos, Escolher uma imagem de disco. Aponte para o arquivo ubuntu-22-xxx.iso.
+* Vá no menu da máquina virtual, acesse "Dispositivos" -> "Discos óticos" -> "Escolher uma imagem de disco". Aponte para o arquivo ubuntu-22-xxx.iso.
 * Inicie a VM para iniciar a instalação
 
 ## Instalando o Docker no Ubuntu 22.04

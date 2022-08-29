@@ -36,7 +36,9 @@ Acesse a máquina virtual e execute os comandos abaixo, um por vez:
 ## Defina a memória virtual
 
     sudo sysctl -w vm.max_map_count=262144
-    sudo echo "vm.max_map_count=262144" >> /etc/sysctl.conf
+    sudo su -
+    echo "vm.max_map_count=262144" >> /etc/sysctl.conf
+    su - seu_usuario
 
 ## Preparando os arquivos docker-compose e .env que criarão o cluster
     mkdir ~/elastic

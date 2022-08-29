@@ -4,7 +4,7 @@
 * Instale no Virtualbox: https://download.virtualbox.org/virtualbox/6.1.36/VirtualBox-6.1.36-152435-Win.exe
 * No Virtualbox, crie uma rede virtual no menu Arquivo, Preferências, Rede, botão "Acrescentar uma nova rede NAT"
 
-## Install Ubuntu Desktop
+## Instalando o Ubuntu Desktop
 * Puxe a .iso do Ubuntu Desktop do link: https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso
 * Crie uma VM no virtualbox do tipo Linux - Ubuntu(64-bit) com pelo menos 16Gb RAM e 100Gb de disco
 * Nas configurações de rede da VM, escolha a rede NAT criada anteriormente.
@@ -29,7 +29,7 @@ Acesse a máquina virtual e execute os comandos abaixo, um por vez:
     $ docker -v
     $ docker compose version
     
-## Defina a memória virtual
+## Definindo a memória virtual
 
     sudo sysctl -w vm.max_map_count=262144
     sudo su -

@@ -45,32 +45,30 @@ Do navegador web, em outra VM na mesma rede, acesse a URL http://localhost:5601
 Usuário: elastic
 Pass: elastic123456
 
---------------------------------------
-Importando os datasets para o Elastic
---------------------------------------
 
-Dentro da pasta elastic:
+## Importando os datasets para o Elastic
+
+### Criando os índices CRIMESSP e MOVIE
+
+Copie o conteúdo dos arquivos abaixo, um por vez, no Dev Tools do Elastic, e aplique.
+https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp.txt
+https://github.com/romulorm/elk-docs/raw/master/datasets/movie.txt
+
+### Importando as informações para os índices
+
+Dentro da pasta ~/elastic do servidor, faça o download dos bancos de dados em formato json:
     wget https://github.com/romulorm/elk-docs/raw/master/datasets/accounts.json
-    wget https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp.json
     wget https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp-data.json
-    wget https://github.com/romulorm/elk-docs/raw/master/datasets/movie.json
     wget https://github.com/romulorm/elk-docs/raw/master/datasets/movie-data.json
 
-POST /banco/_doc/_bulk?pretty&refresh
--binary @accounts.json
 
---------------------------
 
-PUT /crimessp?pretty
--binary @crimessp.json
+    curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/banco/_bulk?pretty&refresh" --data-binary "@accounts.json"
+    curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/crimessp/_bulk?pretty&refresh" --data-binary "@crimessp-data.json"
+    curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/movie/_bulk?pretty&refresh" --data-binary "@movie-data.json"
+   
+   
+### Testando as consultas nos índices criados
 
-PUT /crimessp/_doc/_bulk?pretty&refresh
--binary @crimessp-data.json
-
---------------------------
-
-PUT /movie?pretty
--binary @movie.json
-
-PUT /movie/_doc/_bulk?pretty&refresh
--binary @movie-data.json
+Acesse o arquivo abaixo e teste as consultas nele contidas pelo Dev Tools:
+https://github.com/romulorm/elk-docs/blob/master/cap02-instalacao_configuracao_elasticsearch/03-apis_de_operacao_e_query_dsl.txt

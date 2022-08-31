@@ -56,14 +56,14 @@ MOVIE: https://github.com/romulorm/elk-docs/raw/master/datasets/movie.txt
 
 ### Importando as informações para os índices
 
-Dentro da pasta ~/elastic do servidor, faça o download dos bancos de dados em formato json:
+Dentro da pasta ~/elastic do servidor, faça o download dos bancos de dados em formato json e importe no Elastic:
 
-    wget https://github.com/romulorm/elk-docs/raw/master/datasets/accounts.json
-    wget https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp-data.json
-    wget https://github.com/romulorm/elk-docs/raw/master/datasets/movie-data.json
-    curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/banco/_bulk?pretty&refresh" --data-binary "@accounts.json"
-    curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/crimessp/_bulk?pretty&refresh" --data-binary "@crimessp-data.json"
-    curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/movie/_bulk?pretty&refresh" --data-binary "@movie-data.json"
+    wget https://github.com/romulorm/elk-docs/raw/master/datasets/accounts.json && curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/banco/_bulk?pretty&refresh" --data-binary "@accounts.json"
+    
+    wget https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp-data.json && curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/crimessp/_bulk?pretty&refresh" --data-binary "@crimessp-data.json"
+    
+    wget https://github.com/romulorm/elk-docs/raw/master/datasets/movie-data.json && curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/movie/_bulk?pretty&refresh" --data-binary "@movie-data.json"
+             
    
 ### Testando as consultas nos índices criados
 

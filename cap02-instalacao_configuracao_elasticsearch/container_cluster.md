@@ -31,16 +31,16 @@ Acesse a máquina virtual e execute os comandos abaixo, um por vez:
     
 ## Definindo a memória virtual
 
-    sudo sysctl -w vm.max_map_count=262144
-    sudo su -
-    echo "vm.max_map_count=262144" >> /etc/sysctl.conf
-    su - seu_usuario
+    $ sudo sysctl -w vm.max_map_count=262144
+    $ sudo su -
+    $ echo "vm.max_map_count=262144" >> /etc/sysctl.conf
+    $ su - seu_usuario
 
 ## Preparando os arquivos docker-compose e .env que criarão o cluster
-    mkdir ~/elastic && cd ~/elastic
-    wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/docker-compose.yml
-    wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/.env
-    docker compose up -d
+    $ mkdir ~/elastic && cd ~/elastic
+    $ wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/docker-compose.yml
+    $ wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/.env
+    $ docker compose up -d
 
 Depois de instalado o cluster, abra o navegador web acesse a URL http://localhost:5601 com o usuário: **elastic** e senha: **elastic123456**
 
@@ -58,11 +58,11 @@ MOVIE: https://github.com/romulorm/elk-docs/raw/master/datasets/movie.txt
 
 Dentro da pasta ~/elastic do servidor, faça o download dos bancos de dados em formato json e importe no Elastic:
 
-    wget https://github.com/romulorm/elk-docs/raw/master/datasets/accounts.json && curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/banco/_bulk?pretty&refresh" --data-binary "@accounts.json"
+    $ wget https://github.com/romulorm/elk-docs/raw/master/datasets/accounts.json && curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/banco/_bulk?pretty&refresh" --data-binary "@accounts.json"
     
-    wget https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp-data.json && curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/crimessp/_bulk?pretty&refresh" --data-binary "@crimessp-data.json"
+    $ wget https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp-data.json && curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/crimessp/_bulk?pretty&refresh" --data-binary "@crimessp-data.json"
     
-    wget https://github.com/romulorm/elk-docs/raw/master/datasets/movie-data.json && curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/movie/_bulk?pretty&refresh" --data-binary "@movie-data.json"
+    $ wget https://github.com/romulorm/elk-docs/raw/master/datasets/movie-data.json && curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/movie/_bulk?pretty&refresh" --data-binary "@movie-data.json"
              
    
 ### Testando as consultas nos índices criados
@@ -73,4 +73,4 @@ https://github.com/romulorm/elk-docs/blob/master/cap02-instalacao_configuracao_e
 
 ### Removendo o LAB e TODOS os dados
 
-    docker compose down -v
+    $ docker compose down -v

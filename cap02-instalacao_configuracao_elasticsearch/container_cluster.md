@@ -67,7 +67,7 @@ Dentro da pasta ~/elastic do servidor, faça o download dos bancos de dados em f
    
 ### Testando as consultas nos índices criados
 
-Acesse o arquivo abaixo e teste as consultas nele contidas pelo Dev Tools:
+Acesse o arquivo abaixo e teste as consultas nele contidas pelo Dev Tools do Kibana (Management -> Dev Tools:
 
 https://github.com/romulorm/elk-docs/blob/master/cap02-instalacao_configuracao_elasticsearch/03-apis_de_operacao_e_query_dsl.txt
 

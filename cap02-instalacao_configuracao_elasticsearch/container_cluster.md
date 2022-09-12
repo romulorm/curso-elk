@@ -74,14 +74,13 @@ https://github.com/romulorm/elk-docs/blob/master/cap02-instalacao_configuracao_e
 
 ### Atualizando o cluster
 
-1) Parar os containers com o Docker Compose:
 
     $ docker compose down
 
-2) Editar o valor da variável STACK_VERSION do arquivo .env para a última versão disponível do Elastic.
+Editar o valor da variável STACK_VERSION do arquivo .env para a última versão disponível do Elastic.
+
 Exemplo: STACK_VERSION="8.4.1"
 
-3) Fazer o deploy da nova versão do Elastic.
 
     $ docker compose up -d
 

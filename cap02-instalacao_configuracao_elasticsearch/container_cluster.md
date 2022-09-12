@@ -74,7 +74,7 @@ https://github.com/romulorm/elk-docs/blob/master/cap02-instalacao_configuracao_e
 
 ### Atualizando o cluster
 
-1) Parar os containers com o Docker Compose
+1) Parar os containers com o Docker Compose:
 
     $ docker compose down
 

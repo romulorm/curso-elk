@@ -71,6 +71,19 @@ Acesse o arquivo abaixo e teste as consultas nele contidas pelo Dev Tools do Kib
 
 https://github.com/romulorm/elk-docs/blob/master/cap02-instalacao_configuracao_elasticsearch/03-apis_de_operacao_e_query_dsl.txt
 
+
+### Atualizando o cluster
+
+1) Parar os containers com o Docker Compose
+    $ docker compose down
+
+2) Editar o valor da variável STACK_VERSION do arquivo .env para a última versão disponível do Elastic.
+Exemplo: STACK_VERSION="8.4.1"
+
+3) Fazer o deploy da nova versão do Elastic.
+    $ docker compose up -d
+
+
 ### Removendo o LAB e TODOS os dados
 
     $ docker compose down -v

@@ -101,7 +101,7 @@ PUT /crimessp
           "type": "keyword"
         },
         "sexo": {
-          "type": "long"
+          "type": "boolean"
         },
         "time": {
           "type": "date",

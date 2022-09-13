@@ -1,17 +1,19 @@
 # ELASTIC SEARCH - CONTAINERS LAB
 
-## Instalando o Virtualbox
+## Montando o ambiente
+
+### Instalando o Virtualbox
 * Instale no Virtualbox: https://download.virtualbox.org/virtualbox/6.1.36/VirtualBox-6.1.36-152435-Win.exe
 * No Virtualbox, crie uma rede virtual no menu Arquivo, Preferências, Rede, botão "Acrescentar uma nova rede NAT" com um nome a sua escolha.
 
-## Instalando o Ubuntu Desktop
+### Instalando o Ubuntu Desktop
 * Puxe a .iso do Ubuntu Desktop do link: https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso
 * Crie uma VM no virtualbox do tipo Linux - Ubuntu(64-bit) com pelo menos 12Gb RAM e 80Gb de disco
 * Nas configurações de rede da VM, escolha a rede NAT criada anteriormente.
 * Vá no menu da máquina virtual, acesse "Dispositivos" -> "Discos óticos" -> "Escolher uma imagem de disco". Aponte para o arquivo ubuntu-22-xxx.iso.
 * Inicie a VM para iniciar a instalação
 
-## Instalando o Docker no Ubuntu 22.04
+### Instalando o Docker no Ubuntu 22.04
 
 Acesse a máquina virtual e execute os comandos abaixo, um por vez:
 
@@ -29,14 +31,14 @@ Acesse a máquina virtual e execute os comandos abaixo, um por vez:
     $ docker -v
     $ docker compose version
     
-## Definindo a memória virtual
+### Definindo a memória virtual
 
     $ sudo sysctl -w vm.max_map_count=262144
     $ sudo su -
     $ echo "vm.max_map_count=262144" >> /etc/sysctl.conf
     $ su - seu_usuario
 
-## Preparando os arquivos docker-compose e .env que criarão o cluster
+### Preparando os arquivos docker-compose e .env que criarão o cluster
     $ mkdir ~/elastic && cd ~/elastic
     $ wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/docker-compose.yml
     $ wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/.env
@@ -44,9 +46,9 @@ Acesse a máquina virtual e execute os comandos abaixo, um por vez:
 
 Depois de instalado o cluster, abra o navegador web acesse a URL http://localhost:5601 com o usuário: **elastic** e senha: **elastic123456**
 
-## Importando os datasets para o Elastic
+### Importando os datasets para o Elastic
 
-### Criando os índices CRIMESSP e MOVIE
+#### Criando os índices CRIMESSP e MOVIE
 
 Copie o conteúdo dos arquivos abaixo, um por vez, no Dev Tools do Elastic, e aplique.
 
@@ -54,7 +56,7 @@ CRIMESSSP: https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp.txt
 
 MOVIE: https://github.com/romulorm/elk-docs/raw/master/datasets/movie.txt
 
-### Importando as informações para os índices
+#### Importando as informações para os índices
 
 Dentro da pasta ~/elastic do servidor, faça o download dos bancos de dados em formato json e importe no Elastic:
 
@@ -72,7 +74,7 @@ Acesse o arquivo abaixo e teste as consultas nele contidas pelo Dev Tools do Kib
 https://github.com/romulorm/elk-docs/blob/master/cap02-instalacao_configuracao_elasticsearch/03-apis_de_operacao_e_query_dsl.txt
 
 
-### Atualizando o cluster
+## Como atualizar o cluster
 
 
     $ docker compose down
@@ -85,6 +87,6 @@ Exemplo: STACK_VERSION="8.4.1"
     $ docker compose up -d
 
 
-### Removendo o LAB e TODOS os dados
+## Como remover o LAB e TODOS os dados
 
     $ docker compose down -v

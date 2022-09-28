@@ -1,0 +1,59 @@
+{
+  $schema: https://vega.github.io/schema/vega-lite/v5.json
+  mark:  {
+    "type": "point", 
+    "tooltip": true
+  },
+  data: {
+    url: {
+      %context%: true
+      %timefield%: @timestamp
+      index: kibana_sample_data_logs
+      body: {
+        size: 10000,
+        _source: ['timestamp', 'bytes', 'extension']
+      }
+    }
+    format: { property: "hits.hits" }
+  }
+  transform: [
+    {
+      calculate: "toDate(datum._source['timestamp'])"
+      as: "time"
+    }
+  ]
+  encoding: {
+    x: {
+      field: time
+      type: temporal
+      axis: { title: false }
+    }
+    y: {
+      field: _source.bytes
+      type: quantitative
+      axis: { title: "Transferred bytes" }
+    }
+    color: {
+      field: _source.extension
+      type: nominal
+      legend: { title: 'File type' }
+    }
+    shape: {
+      field: _source.extension
+      type: nominal
+    }
+    tooltip: [{
+      field: _source.timestamp
+      type: temporal
+      title: "Date"
+    }, {
+      field: _source.extension
+      type: nominal
+      title: "Extension"
+    }, {
+      field: _source.bytes
+      type: quantitative
+      title: "Count"
+    }]
+  }
+}

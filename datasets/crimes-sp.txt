@@ -1,12 +1,15 @@
-PUT /crimessp
+PUT /crimes-sp
 {
   "settings": {
     "number_of_replicas": 0,
     "number_of_shards": 1
   }, 
-  "mappings": {
+   "mappings": {
+      "_meta": {
+        "created_by": "file-data-visualizer"
+      },
       "properties": {
-        "@timestamp": {
+	"@timestamp": {
           "type": "date"
         },
         "Bicicleta": {
@@ -71,7 +74,7 @@ PUT /crimessp
         },
         "created_at": {
           "type": "date",
-          "format": "yyyy-MM-dd HH:mm:ss.SSS"
+          "format": "dd/MM/yyyy' 'HH:mm"
         },
         "descricao": {
           "type": "text"
@@ -82,17 +85,11 @@ PUT /crimessp
         "id": {
           "type": "long"
         },
-        "id_1": {
-          "type": "long"
-        },
-        "ip_address_origin": {
-          "type": "keyword"
-        },
         "latitude": {
           "type": "double"
         },
-        "latlong": {
-          "type": "geo_point"
+        "location": {
+          "type": "geo_shape"
         },
         "longitude": {
           "type": "double"
@@ -101,11 +98,11 @@ PUT /crimessp
           "type": "keyword"
         },
         "sexo": {
-          "type": "boolean"
+          "type": "long"
         },
         "time": {
           "type": "date",
-          "format": "yyyy-MM-dd HH:mm:ss.SSS"
+          "format": "dd/MM/yyyy' 'HH:mm"
         },
         "tipo_assalto_id": {
           "type": "long"
@@ -113,17 +110,8 @@ PUT /crimessp
         "titulo": {
           "type": "text"
         },
-        "uri": {
-          "type": "keyword"
-        },
-        "user_id": {
-          "type": "double"
-        },
         "valor_prejuizo": {
           "type": "double"
-        },
-        "location": {
-          "type": "geo_point"
         }
       }
     }

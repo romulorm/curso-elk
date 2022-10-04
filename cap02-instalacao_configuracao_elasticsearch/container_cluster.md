@@ -44,38 +44,12 @@ Acesse a máquina virtual e execute os comandos abaixo, um por vez:
     $ wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/.env
     $ docker compose up -d
 
-Depois de instalado o cluster, abra o navegador web acesse a URL http://localhost:5601 com o usuário: **elastic** e senha: **elastic123456**
-
-### Importando os datasets para o Elastic
-
-#### Criando os índices CRIMESSP e MOVIE
-
-Copie o conteúdo dos arquivos abaixo, um por vez, no Dev Tools do Elastic, e aplique.
-
-CRIMESSSP: https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp.txt
-
-MOVIE: https://github.com/romulorm/elk-docs/raw/master/datasets/movie.txt
-
-#### Importando as informações para os índices
-
-Dentro da pasta ~/elastic do servidor, faça o download dos bancos de dados em formato json e importe no Elastic:
-
-    $ wget https://github.com/romulorm/elk-docs/raw/master/datasets/accounts.json && curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/banco/_bulk?pretty&refresh" --data-binary "@accounts.json"
-    
-    $ wget https://github.com/romulorm/elk-docs/raw/master/datasets/crimessp-data.json && curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/crimessp/_bulk?pretty&refresh" --data-binary "@crimessp-data.json"
-    
-    $ wget https://github.com/romulorm/elk-docs/raw/master/datasets/movie-data.json && curl -u elastic:elastic123456 -k -H "Content-Type: application/json" -X PUT "https://localhost:9200/movie/_bulk?pretty&refresh" --data-binary "@movie-data.json"
-             
-   
-### Testando as consultas nos índices criados
-
-Acesse o arquivo abaixo e teste as consultas nele contidas pelo Dev Tools do Kibana (Management -> Dev Tools:
-
-https://github.com/romulorm/elk-docs/blob/master/cap02-instalacao_configuracao_elasticsearch/03-apis_de_operacao_e_query_dsl.txt
+Depois de instalado o cluster, abra o navegador web acesse a URL do KIBANA no endereço http://localhost:5601 com o usuário: **elastic** e senha: **elastic123456**
 
 
 ## Como atualizar o cluster
 
+Quando estiver disponível uma nova versão do Elastic, atualize-o com os seguintes procedimentos.
 
     $ docker compose down
 
@@ -89,4 +63,6 @@ Exemplo: STACK_VERSION="8.4.1"
 
 ## Como remover o LAB e TODOS os dados
 
+Para remover todos os containers e seus respectivos volumes, execute o comando abaixo.
+   
     $ docker compose down -v

@@ -1,118 +1,105 @@
-PUT /crimes-sp
 {
-  "settings": {
-    "number_of_replicas": 0,
-    "number_of_shards": 1
-  }, 
-   "mappings": {
-      "_meta": {
-        "created_by": "file-data-visualizer"
-      },
-      "properties": {
-	"@timestamp": {
-          "type": "date"
-        },
-        "Bicicleta": {
-          "type": "keyword"
-        },
-        "Bolsa ou Mochila": {
-          "type": "keyword"
-        },
-        "Carteira": {
-          "type": "keyword"
-        },
-        "Cartão de Crédito": {
-          "type": "keyword"
-        },
-        "Celular": {
-          "type": "keyword"
-        },
-        "Computador": {
-          "type": "keyword"
-        },
-        "DVD": {
-          "type": "keyword"
-        },
-        "Dinheiro": {
-          "type": "keyword"
-        },
-        "Documentos": {
-          "type": "keyword"
-        },
-        "Equipamento de Som": {
-          "type": "keyword"
-        },
-        "Estepe": {
-          "type": "keyword"
-        },
-        "MP4 ou Ipod": {
-          "type": "keyword"
-        },
-        "Móveis": {
-          "type": "keyword"
-        },
-        "Notebook": {
-          "type": "keyword"
-        },
-        "Outros": {
-          "type": "keyword"
-        },
-        "Relógio": {
-          "type": "keyword"
-        },
-        "Som": {
-          "type": "keyword"
-        },
-        "Tablet": {
-          "type": "keyword"
-        },
-        "Tv": {
-          "type": "keyword"
-        },
-        "bairro": {
-          "type": "keyword"
-        },
-        "created_at": {
-          "type": "date",
-          "format": "dd/MM/yyyy' 'HH:mm"
-        },
-        "descricao": {
-          "type": "text"
-        },
-        "endereco": {
-          "type": "text"
-        },
-        "id": {
-          "type": "long"
-        },
-        "latitude": {
-          "type": "double"
-        },
-        "location": {
-          "type": "geo_shape"
-        },
-        "longitude": {
-          "type": "double"
-        },
-        "registrou_bo": {
-          "type": "keyword"
-        },
-        "sexo": {
-          "type": "long"
-        },
-        "time": {
-          "type": "date",
-          "format": "dd/MM/yyyy' 'HH:mm"
-        },
-        "tipo_assalto_id": {
-          "type": "long"
-        },
-        "titulo": {
-          "type": "text"
-        },
-        "valor_prejuizo": {
-          "type": "double"
-        }
-      }
+  "properties": {
+    "Bicicleta": {
+      "type": "keyword"
+    },
+    "Bolsa ou Mochila": {
+      "type": "keyword"
+    },
+    "Carteira": {
+      "type": "keyword"
+    },
+    "Cartão de Crédito": {
+      "type": "keyword"
+    },
+    "Celular": {
+      "type": "keyword"
+    },
+    "Computador": {
+      "type": "keyword"
+    },
+    "DVD": {
+      "type": "keyword"
+    },
+    "Dinheiro": {
+      "type": "keyword"
+    },
+    "Documentos": {
+      "type": "keyword"
+    },
+    "Equipamento de Som": {
+      "type": "keyword"
+    },
+    "Estepe": {
+      "type": "keyword"
+    },
+    "MP4 ou Ipod": {
+      "type": "keyword"
+    },
+    "Móveis": {
+      "type": "keyword"
+    },
+    "Notebook": {
+      "type": "keyword"
+    },
+    "Outros": {
+      "type": "keyword"
+    },
+    "Relógio": {
+      "type": "keyword"
+    },
+    "Som": {
+      "type": "keyword"
+    },
+    "Tablet": {
+      "type": "keyword"
+    },
+    "Tv": {
+      "type": "keyword"
+    },
+    "bairro": {
+      "type": "keyword"
+    },
+    "created_at": {
+        "type": "date",
+        "format": "dd/MM/yyyy' 'HH:mm"
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "endereco": {
+      "type": "text"
+    },
+    "id": {
+      "type": "long"
+    },
+    "latitude": {
+      "type": "double"
+    },
+    "longitude": {
+      "type": "double"
+    },
+    "registrou_bo": {
+      "type": "keyword"
+    },
+    "sexo": {
+      "type": "long"
+    },
+    "time": {
+        "type": "date",
+        "format": "dd/MM/yyyy' 'HH:mm"
+    },
+    "tipo_assalto_id": {
+      "type": "long"
+    },
+    "titulo": {
+      "type": "text"
+    },
+    "valor_prejuizo": {
+      "type": "double"
+    },
+    "location": {
+      "type": "geo_point"
     }
   }
+}

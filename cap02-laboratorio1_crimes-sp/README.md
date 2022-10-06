@@ -43,19 +43,42 @@ Laboratório envolvendo um dataset de Crimes em SP.
 
 ### Adicionando mais informações ao Dashboard
 
-#### Trabalhando com Bibliotecas de visualização (Visualize Library)
 
-* Para adicionar Bibliotecas de visualização, acesse a opção **Visualize Library**, na seção Analytics do Kibana;
+##### Gráfico Pizza "Top assaltos por bairro"
+
+Criando um gráfico do tipo Pizza ou Torta com os bairros com mais ocorrências.
+
+* Acesse a opção **Visualize Library**, na seção Analytics do Kibana;
 * Clique no botão **Create visualization**;
-* Selecione **Lens**;
+* Selecione **Lens**
 * No tipo de gráfico, mude de "Bar vertical stacked" para **Pie**;
 * Arraste o campo **bairro** para o campo "Slice by";
 * No campo "Size by", clique em "Add or drag..." e selecione **Count**;
 * Vamos ajustar a visualização retirando o agrupamento "Other" e retirando o bairro "São Paulo".
-* Clique em **Top 5 aues of bairro** e altere o campo **Number of values** para 10;
+* Clique em **Top 5 values of bairro** e altere o campo **Number of values** para **10**;
 * Clique em Advanced e ajuste os campos abaixo:
     - Desative "Group other values as Other"
     - Em "Exclude values", escreva "São Paulo", que não é um bairro.
 * Aperte "Close";
 * Clique em "Save" e coloque o nome "Top assaltos por bairro".
 * Selecione o Dashboard **Painel da Criminalidade em SP** salvo anteriormente.
+* Clique em "Save" novamente para salvar o Dashboard.
+
+##### Gráfico Contador (Metric)  "Top assaltos por bairro"
+
+Criando contadores mostrando os bairros com mais ocorrências.
+
+* Acesse a opção **Visualize Library**, na seção Analytics do Kibana;
+* Clique no botão **Create visualization**;
+* Selecione **Lens**
+* No tipo de gráfico, mude de "Bar vertical stacked" para **Metric**;
+* Arraste o campo **Records** para o campo "Primary metric";
+* Arraste o campo **Bairro** para o campo "Break down by";
+* Clique em **Top 5 values of bairro** e altere o campo **Number of values** para **9**;
+* Clique em Advanced e ajuste os campos abaixo:
+    - Desative "Group other values as Other"
+    - Em "Exclude values", escreva "São Paulo", que não é um bairro.
+* Aperte "Close";
+* Clique em "Save" e coloque o nome "Contador assaltos por bairro".
+* Selecione o Dashboard **Painel da Criminalidade em SP** salvo anteriormente.
+* Clique em "Save" novamente para salvar o Dashboard.

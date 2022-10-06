@@ -50,7 +50,7 @@
     {
       "set": {
         "field": "location",
-        "value": "{{longitude}},{{latitude}}"
+        "value": "{{latitude}},{{longitude}}"
       }
     }
   ]

@@ -43,6 +43,20 @@
       }
     },
     {
+      "gsub": {
+        "field": "sexo",
+        "pattern": "0",
+        "replacement": "Feminino"
+      }
+    },
+    {
+      "gsub": {
+        "field": "sexo",
+        "pattern": "1",
+        "replacement": "Masculino"
+      }
+    },
+    {
       "remove": {
         "field": "message"
       }

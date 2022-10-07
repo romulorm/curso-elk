@@ -83,7 +83,7 @@
       "type": "keyword"
     },
     "sexo": {
-      "type": "long"
+      "type": "text"
     },
     "time": {
         "type": "date",

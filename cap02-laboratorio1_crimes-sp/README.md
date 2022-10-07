@@ -79,6 +79,11 @@ Criando contadores mostrando os bairros com mais ocorrências.
     - Desative "Group other values as Other"
     - Em "Exclude values", escreva "São Paulo", que não é um bairro.
 * Aperte "Close";
+* Arraste o campo **registrou_bo** para o campo "Secondary metric";
+* Clique em **Unique count of registrou_bo** e altere a Function para **Count**;
+* Clique em Advanced e em "Filter by" coloque "registrou_bo:"VERDADEIRO";
+* Aperte "Close";
+* Será mostrado o número de Ocorrências em que foi registrado o Boletim de Ocorrências.
 * Clique em "Save" e coloque o nome "Contador assaltos por bairro".
 * Selecione o Dashboard **Painel da Criminalidade em SP** salvo anteriormente.
 * Clique em "Save" novamente para salvar o Dashboard.

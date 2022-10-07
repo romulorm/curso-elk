@@ -12,6 +12,7 @@ Laboratório envolvendo um dataset de Assaltos em SP.
 * Teremos que alterar os mapeamentos dos campos para refletir os verdadeiros tipos de dados, a exemplo dos campos time e created_at que devem ser do tipo "date";
 * Para facilitar, substitua o conteúdo do campo **Mappings** pelo conteúdo do arquivo https://github.com/romulorm/elk-docs/blob/master/cap02-laboratorio1_assaltos-sp/assaltos-sp-mappings.txt;
 * Assim como feito acima, substitua o conteúdo do campo **Ingest Pipeline** pelo conteúdo do arquivo  https://github.com/romulorm/elk-docs/blob/master/cap02-laboratorio1_assaltos-sp/assaltos-sp-ingest_pipeline.txt;
+* Vai dar falha em um registro. Desconsidere.
 * Clique em **View index in Discover**.
 
 ### Criando Mapas

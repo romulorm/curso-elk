@@ -114,6 +114,7 @@ Criando uma tabela mostrando o prejuízo das vítimas desmembrado por bairro e p
 * Aperte "Close";
 
 * Clique em **Top 3 values of sexo** e altere o campo **Number of values** para **2**;
+* No campo **Rank by** deixe selecionado **Alphabetical**;
 * Aperte "Close";
 
 

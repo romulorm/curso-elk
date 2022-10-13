@@ -17,14 +17,14 @@ Laboratório envolvendo um dataset de Assaltos em SP.
 
 ### Criando Mapas
 
-#### Mapa da Criminalidade
+#### Mapa de Assaltos em SP
 
 * Para criar um mapa, acesse a opção **Maps**, na seção Analytics do Kibana;
 * Clique no botão **Create map**;
 * Clique no botão **Add layer**;
 * Selecione a opção **Documents**;
 * Selecione a data view **assaltos-sp** e clique no botão **Add layer**;
-* Na próxima tela coloque o nome da camada como **criminalidade**;
+* Na próxima tela coloque o nome da camada como **assaltos**;
 * Reduza a opacidade para 30%;
 * Vamos criar Tooltip fields que serão mostrados quando o mouse estiver sobre o registro. Selecione: **time, titulo, bairro, valor_prejuizo**;
 * Ajuste o tamanho dos registros. **Symbol size: 1**;
@@ -40,14 +40,14 @@ Laboratório envolvendo um dataset de Assaltos em SP.
 * Clique no botão **Save & Close**;
 * Observe que quanto mais registros na área, mais vermelho aparecerá.
 * Clique em Save, defina o nome do mapa como **Mapa de assaltos em SP** e escolha New para criar um Dashboard onde o mapa será exibido.
-* Clique em Save novamente para salvar o Dashboard atual. Defina o nome de **Painel da Criminalidade em SP**.
+* Clique em Save novamente para salvar o Dashboard atual. Defina o nome de **Painel de Assaltos em SP**.
 
 ### Adicionando mais informações ao Dashboard
 
 
 ##### Gráfico Pizza "Top assaltos por bairro"
 
-Criando um gráfico do tipo Pizza ou Torta com os bairros com mais ocorrências.
+Criando um gráfico do tipo Pizza ou Torta com os bairros com mais ocorrências de assaltos.
 
 * Acesse a opção **Visualize Library**, na seção Analytics do Kibana;
 * Clique no botão **Create visualization**;
@@ -62,7 +62,7 @@ Criando um gráfico do tipo Pizza ou Torta com os bairros com mais ocorrências.
     - Em "Exclude values", escreva "São Paulo", que não é um bairro.
 * Aperte "Close";
 * Clique em "Save" e coloque o nome "Top assaltos por bairro".
-* Selecione o Dashboard **Painel da Criminalidade em SP** salvo anteriormente.
+* Selecione o Dashboard **Painel de Assaltos em SP** salvo anteriormente.
 * Clique em "Save" novamente para salvar o Dashboard.
 
 ##### Gráfico Contador (Metric)  "Top assaltos por bairro"
@@ -86,5 +86,36 @@ Criando contadores mostrando os bairros com mais ocorrências.
 * Aperte "Close";
 * Será mostrado o número de Ocorrências em que foi registrado o Boletim de Ocorrências.
 * Clique em "Save" e coloque o nome "Contador assaltos por bairro".
-* Selecione o Dashboard **Painel da Criminalidade em SP** salvo anteriormente.
+* Selecione o Dashboard **Painel de Assaltos em SP** salvo anteriormente.
+* Clique em "Save" novamente para salvar o Dashboard.
+
+##### Tabela "Top 10 prejuizo/bairro/sexo"
+
+Criando uma tabela mostrando o prejuízo das vítimas desmembrado por bairro e por sexo.
+
+* Acesse a opção **Visualize Library**, na seção Analytics do Kibana;
+* Clique no botão **Create visualization**;
+* Selecione **Lens**
+* No tipo de gráfico, mude de "Bar vertical stacked" para **Table**;
+* Arraste o campo **bairro** para o campo "Rows";
+* Arraste o campo **sexo** para o campo "Columns";
+* Arraste o campo **valor_prejuizo** para o campo "Metrics";
+
+* Clique em **Median of valor_prejuizo** no campo Metrics;
+* Selecione a Function **Sum**;
+* No campo Name coloque **Prejuizo**;
+
+* Clique em **Top 5 values of bairro** e altere o campo **Number of values** para **10**;
+* No campo **Rank by** deixe selecionado **Prejuizo**;
+* Clique em Advanced e ajuste os campos abaixo:
+    - Desative "Group other values as Other"
+    - Em "Exclude values", escreva "São Paulo", que não é um bairro.
+* No campo Name coloque **Top 10 prejuizo/bairro/sexo**;
+* Aperte "Close";
+
+* Clique em **Top 3 values of sexo** e altere o campo **Number of values** para **2**;
+* Aperte "Close";
+
+
+* Clique em Save e selecione o Dashboard **Painel de Assaltos em SP** salvo anteriormente.
 * Clique em "Save" novamente para salvar o Dashboard.

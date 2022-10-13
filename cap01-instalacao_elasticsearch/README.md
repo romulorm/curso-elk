@@ -58,32 +58,38 @@ elasticsearch.ssl.verificationMode: none
 
 Acesse a máquina virtual e execute os comandos abaixo, um por vez:
 
-    $ sudo apt-get remove docker docker-engine docker.io containerd runc
-    $ sudo apt-get -y update
-    $ sudo apt-get install ca-certificates curl gnupg lsb-release
-    $ sudo mkdir -p /etc/apt/keyrings
-    $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-    $ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    $ sudo apt-get update
-    $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
-    $ sudo usermod -aG docker $USER
-    $ sudo systemctl enable docker
-    $ sudo systemctl start docker
-    $ docker -v
-    $ docker compose version
+~~~shellscript
+sudo apt-get remove docker docker-engine docker.io containerd runc
+sudo apt-get -y update
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo usermod -aG docker $USER
+sudo systemctl enable docker
+sudo systemctl start docker
+docker -v
+docker compose version
+sudo apt-get install ca-certificates curl gnupg lsb-release
+~~~
     
 ### Definindo a memória virtual
 
-    $ sudo sysctl -w vm.max_map_count=262144
-    $ sudo su -
-    $ echo "vm.max_map_count=262144" >> /etc/sysctl.conf
-    $ su - seu_usuario
+~~~shellscript
+sudo sysctl -w vm.max_map_count=262144
+sudo su -
+echo "vm.max_map_count=262144" >> /etc/sysctl.conf
+su - seu_usuario
+~~~
 
 ### Preparando os arquivos docker-compose e .env que criarão o cluster
-    $ mkdir ~/elastic && cd ~/elastic
-    $ wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/docker-compose.yml
-    $ wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/.env
-    $ docker compose up -d
+~~~shellscript
+mkdir ~/elastic && cd ~/elastic
+wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/docker-compose.yml
+wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/.env
+docker compose up -d
+~~~
 
 Depois de instalado o cluster, abra o navegador web acesse a URL do KIBANA no endereço http://localhost:5601 com o usuário: **elastic** e senha: **elastic123456**
 
@@ -92,18 +98,22 @@ Depois de instalado o cluster, abra o navegador web acesse a URL do KIBANA no en
 
 Quando estiver disponível uma nova versão do Elastic, atualize-o com os seguintes procedimentos.
 
-    $ docker compose down
+~~~shellscript
+docker compose down
+~~~
 
 Editar o valor da variável STACK_VERSION do arquivo .env para a última versão disponível do Elastic.
 
 Exemplo: STACK_VERSION="8.4.1"
 
-
-    $ docker compose up -d
-
+~~~shellscript
+docker compose up -d
+~~~
 
 ## Como remover o LAB e TODOS os dados
 
 Para remover todos os containers e seus respectivos volumes, execute o comando abaixo.
    
-    $ docker compose down -v
+~~~shellscript
+docker compose down -v
+~~~

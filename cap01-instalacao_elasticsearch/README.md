@@ -32,8 +32,8 @@ http.port: 9200
 * Puxe a versão 8.4.2 do Kibana em:
 https://artifacts.elastic.co/downloads/kibana/kibana-8.4.2-windows-x86_64.zip
 
-* Descompacte no mesmo drive do Elastic;
-* * Com o bloco de notas, inclua no final do arquivo  **config/kibana.yml** o texto abaixo, não deixando espaços em branco no início das linhas:
+* Descompacte na raiz do disco C: ou D:
+* Com o bloco de notas, inclua no final do arquivo  **config/kibana.yml** o texto abaixo, não deixando espaços em branco no início das linhas:
 
 ~~~Parâmetros
 server.port: 5601

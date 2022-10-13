@@ -20,7 +20,14 @@ http.port: 9200
 ~~~
 
 * Execute o arquivo **bin/elasticsearch.bat**.
-* Será apresentada a senha do usuário elastic ao final do carregamento da ferramenta. Salve essa senha no bloco de notas, pois a utilizaremos mais tarde.
+* Em outro prompt de comando, entre no diretório /bin da sua instalação do elastic. Exemplo: **cd C:\elasticsearch-8.4.3\bin**
+* Execute o comando: **elasticsearch-reset-password -i -u elastic**
+* Confirme teclando a letra **Y**;
+* Defina a senha do usuário **elastic** para **elastic123456**
+* Agora vamos utilizar o mesmo comando para alterar a senha do usuário kibana_system
+* Execute o comando: **elasticsearch-reset-password -i -u kibana_system**
+* Confirme teclando a letra **Y**;
+* Defina a senha do usuário **kibana_system** para **kibana123456**
 
 * Puxe a versão 8.4.2 do Kibana em:
 https://artifacts.elastic.co/downloads/kibana/kibana-8.4.2-windows-x86_64.zip
@@ -34,12 +41,12 @@ server.host: "localhost"
 server.maxPayload: 100000000
 elasticsearch.hosts: ["https://localhost:9200"]
 elasticsearch.username: "kibana_system"
-elasticsearch.password: "123456"
+elasticsearch.password: "kibana123456"
 elasticsearch.requestTimeout: 120000
 elasticsearch.ssl.verificationMode: none
 ~~~
 
-# 2) - CONTAINERS LAB
+# 2) CONTAINERS LAB
 
 ## Montando o ambiente
 
@@ -63,7 +70,9 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo apt-get -y update
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo usermod -aG docker $USER

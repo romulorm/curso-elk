@@ -1,4 +1,45 @@
-# ELASTIC SEARCH - CONTAINERS LAB
+Serão apresentados dois tipos de instalação do Elastic: 
+1) Instalação Single-node utilizando os binários para Windows;
+2) Instalação em cluster utilizando conteineres em uma máquina virtual Linux.
+
+# 1) MS-WINDOWS LAB
+
+## Montando o ambiente no Microsoft Windows
+
+* Puxe a versão 8.4.2 do Elastic em:
+https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.4.2-windows-x86_64.zip
+
+* Descompacte na raiz do disco C: ou D:
+* Com o bloco de notas, inclua no final do arquivo **config/elasticsearch.yml** o texto abaixo, não deixando espaços em branco no início das linhas:
+
+~~~Parâmetros
+cluster.name: elastic-local
+discovery.type: single-node
+network.host: localhost
+http.port: 9200
+~~~
+
+* Execute o arquivo **bin/elasticsearch.bat**.
+* Será apresentada a senha do usuário elastic ao final do carregamento da ferramenta. Salve essa senha no bloco de notas, pois a utilizaremos mais tarde.
+
+* Puxe a versão 8.4.2 do Kibana em:
+https://artifacts.elastic.co/downloads/kibana/kibana-8.4.2-windows-x86_64.zip
+
+* Descompacte no mesmo drive do Elastic;
+* * Com o bloco de notas, inclua no final do arquivo  **config/kibana.yml** o texto abaixo, não deixando espaços em branco no início das linhas:
+
+~~~Parâmetros
+server.port: 5601
+server.host: "localhost"
+server.maxPayload: 100000000
+elasticsearch.hosts: ["https://localhost:9200"]
+elasticsearch.username: "kibana_system"
+elasticsearch.password: "123456"
+elasticsearch.requestTimeout: 120000
+elasticsearch.ssl.verificationMode: none
+~~~
+
+# 2) - CONTAINERS LAB
 
 ## Montando o ambiente
 

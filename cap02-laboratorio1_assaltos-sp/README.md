@@ -117,6 +117,29 @@ Criando uma tabela mostrando o prejuízo das vítimas desmembrado por bairro e p
 * No campo **Rank by** deixe selecionado **Alphabetical**;
 * Aperte "Close";
 
-
 * Clique em Save e selecione o Dashboard **Painel de Assaltos em SP** salvo anteriormente.
 * Clique em "Save" novamente para salvar o Dashboard.
+
+##### Mapa de palavras "Top 10 ocorrências por bairro"
+
+Criando um Mapa de palavras mostrando com os bairros com maiores ocorrências de assaltos.
+
+* Acesse a opção **Visualize Library**, na seção Analytics do Kibana;
+* Clique no botão **Create visualization**;
+* Selecione **Aggregation based**;
+* Selecione **Tag cloud**;
+* Selecione o índice **assaltos-sp**;
+* Em Metrics, expanda **Tag size**, e em Custom label, escreva **Contador**;
+* Em Buckets, clique em Add, clique em Tags;
+* Selecione Terms;
+* Em Field, selecione **bairro**;
+* Em Size, digite **15**;
+* Em Custom label, escreva **Bairros com maior índice de assaltos**;
+* Expanda Advanced;
+* Em Exclude, digite **São Paulo**;
+* Clique em **Update**;
+* Clique em **Save**;
+* Digite o nome **Mapa de palavras**;
+* Clique em Save e selecione o Dashboard **Painel de Assaltos em SP** salvo anteriormente.
+* Clique em **Save and go to Dashboard**;
+* No Dashboard, clique em **Save** novamente para salvar o Dashboard.

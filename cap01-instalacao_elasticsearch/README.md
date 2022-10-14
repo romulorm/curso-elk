@@ -19,6 +19,13 @@ network.host: localhost
 http.port: 9200
 ~~~
 
+* Com o bloco de notas, descomente os parâmetros abaixo no arquivo **config/jvm.options**, retirando os # e os espaços, ajustando de acordo com a quantidade de memória que irá disponibilizar ao JVM.
+
+~~~Parâmetros
+-Xms2g
+-Xmx2g
+~~~
+
 * Execute o arquivo **bin/elasticsearch.bat**.
 * Em outro prompt de comando, entre no diretório /bin da sua instalação do elastic. Exemplo: **cd C:\elasticsearch-8.4.3\bin**
 * Execute o comando: **elasticsearch-reset-password -i -u elastic**

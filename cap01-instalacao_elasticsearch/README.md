@@ -7,7 +7,7 @@ Serão apresentados dois tipos de instalação do Elastic:
 ## Montando o ambiente no Microsoft Windows
 
 * Puxe a versão 8.4.2 do Elastic em:
-https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.4.2-windows-x86_64.zip
+https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.4.3-windows-x86_64.zip
 
 * Descompacte na raiz do disco C: ou D:
 * Com o bloco de notas, inclua no final do arquivo **config/elasticsearch.yml** o texto abaixo, não deixando espaços em branco no início das linhas:
@@ -37,7 +37,7 @@ http.port: 9200
 * Defina a senha do usuário **kibana_system** para **kibana123456**
 
 * Puxe a versão 8.4.2 do Kibana em:
-https://artifacts.elastic.co/downloads/kibana/kibana-8.4.2-windows-x86_64.zip
+https://artifacts.elastic.co/downloads/kibana/kibana-8.4.3-windows-x86_64.zip
 
 * Descompacte na raiz do disco C: ou D:
 * Com o bloco de notas, inclua no final do arquivo  **config/kibana.yml** o texto abaixo, não deixando espaços em branco no início das linhas:

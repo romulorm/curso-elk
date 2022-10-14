@@ -106,8 +106,8 @@ su - seu_usuario
 ### 5) Preparando os arquivos docker-compose e .env que criarão o cluster
 ~~~shellscript
 mkdir ~/elastic && cd ~/elastic
-wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/docker-compose.yml
-wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/.env
+wget https://github.com/romulorm/curso-elk/blob/master/cap01-instalacao_elasticsearch/docker-compose.yml
+wget https://github.com/romulorm/curso-elk/blob/master/cap01-instalacao_elasticsearch/.env
 docker compose up -d
 ~~~
 

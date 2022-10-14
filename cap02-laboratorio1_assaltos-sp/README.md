@@ -4,14 +4,14 @@ Laboratório envolvendo um dataset de Assaltos em SP.
 
 ### Importando o dataset assaltos-sp
 
-* Faça o download do dataset de Assaltos em SP no endereço: https://github.com/romulorm/elk-docs/raw/master/cap02-laboratorio1_assaltos-sp/assaltos-sp-dataset.csv
+* Faça o download do dataset de Assaltos em SP no endereço: https://github.com/romulorm/curso-elk/blob/master/cap02-laboratorio1_assaltos-sp/assaltos-sp-dataset.csv
 * Para importar o dataset, vá na opção **Machine Learning**, na seção Analytics do Kibana;
 * Acesse a opção **Visualize data from a file** e selecione o arquivo do dataset;
 * No preview do dataset, clique no botão Import;
 * Atenção, inclua o nome do índice como **assaltos-sp** e não aperte o botão Import neste momento, selecione a aba Advanced;
 * Teremos que alterar os mapeamentos dos campos para refletir os verdadeiros tipos de dados, a exemplo dos campos time e created_at que devem ser do tipo "date";
-* Para facilitar, substitua o conteúdo do campo **Mappings** pelo conteúdo do arquivo https://github.com/romulorm/elk-docs/blob/master/cap02-laboratorio1_assaltos-sp/assaltos-sp-mappings.txt;
-* Assim como feito acima, substitua o conteúdo do campo **Ingest Pipeline** pelo conteúdo do arquivo  https://github.com/romulorm/elk-docs/blob/master/cap02-laboratorio1_assaltos-sp/assaltos-sp-ingest_pipeline.txt;
+* Para facilitar, substitua o conteúdo do campo **Mappings** pelo conteúdo do arquivo https://github.com/romulorm/curso-elk/blob/master/cap02-laboratorio1_assaltos-sp/assaltos-sp-mappings.txt;
+* Assim como feito acima, substitua o conteúdo do campo **Ingest Pipeline** pelo conteúdo do arquivo https://github.com/romulorm/curso-elk/blob/master/cap02-laboratorio1_assaltos-sp/assaltos-sp-ingest_pipeline.txt;
 * Vai dar falha em um registro. Desconsidere.
 * Clique em **View index in Discover**.
 

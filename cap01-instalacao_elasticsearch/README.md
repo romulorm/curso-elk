@@ -2,9 +2,9 @@
 
 Serão apresentados dois tipos de instalação do Elastic: 
 1) Instalação Single-node utilizando os binários para Windows;
-2) Instalação em cluster utilizando conteineres em uma máquina virtual Linux.
+2) Instalação em cluster utilizando conteineres em máquina Linux.
 
-# 1) MS-WINDOWS LAB
+# A) MS-WINDOWS LAB
 
 ## Montando o ambiente no Microsoft Windows
 
@@ -55,22 +55,24 @@ elasticsearch.requestTimeout: 120000
 elasticsearch.ssl.verificationMode: none
 ~~~
 
-# 2) CONTAINERS LAB
+# B) CONTAINERS LAB
 
 ## Montando o ambiente
 
-### Instalando o Virtualbox
+Caso já tenha uma máquina Linux, avance para o passo 3.
+
+### 1) Instalando o Virtualbox
 * Instale no Virtualbox: https://download.virtualbox.org/virtualbox/6.1.36/VirtualBox-6.1.36-152435-Win.exe
 * No Virtualbox, crie uma rede virtual no menu Arquivo, Preferências, Rede, botão "Acrescentar uma nova rede NAT" com um nome a sua escolha.
 
-### Instalando o Ubuntu Desktop
+### 2) Instalando o Ubuntu Desktop
 * Puxe a .iso do Ubuntu Desktop do link: https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso
 * Crie uma VM no virtualbox do tipo Linux - Ubuntu(64-bit) com pelo menos 12Gb RAM e 80Gb de disco
 * Nas configurações de rede da VM, escolha a rede NAT criada anteriormente.
 * Vá no menu da máquina virtual, acesse "Dispositivos" -> "Discos óticos" -> "Escolher uma imagem de disco". Aponte para o arquivo ubuntu-22-xxx.iso.
 * Inicie a VM para iniciar a instalação
 
-### Instalando o Docker no Ubuntu 22.04
+### 3) Instalando o Docker no Ubuntu 22.04
 
 Acesse a máquina virtual e execute os comandos abaixo, um por vez:
 
@@ -92,7 +94,7 @@ docker compose version
 sudo apt-get install ca-certificates curl gnupg lsb-release
 ~~~
     
-### Definindo a memória virtual
+### 4) Definindo a memória virtual
 
 ~~~shellscript
 sudo sysctl -w vm.max_map_count=262144
@@ -101,7 +103,7 @@ echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 su - seu_usuario
 ~~~
 
-### Preparando os arquivos docker-compose e .env que criarão o cluster
+### 5) Preparando os arquivos docker-compose e .env que criarão o cluster
 ~~~shellscript
 mkdir ~/elastic && cd ~/elastic
 wget https://github.com/romulorm/elk-docs/raw/master/cap02-instalacao_configuracao_elasticsearch/docker-compose.yml
@@ -111,6 +113,7 @@ docker compose up -d
 
 Depois de instalado o cluster, abra o navegador web acesse a URL do KIBANA no endereço http://localhost:5601 com o usuário: **elastic** e senha: **elastic123456**
 
+---
 
 ## Como atualizar o cluster
 
@@ -127,6 +130,8 @@ Exemplo: STACK_VERSION="8.4.1"
 ~~~shellscript
 docker compose up -d
 ~~~
+
+---
 
 ## Como remover o LAB e TODOS os dados
 

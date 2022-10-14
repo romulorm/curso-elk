@@ -1,3 +1,5 @@
+# Instalação do Elastic + Kibana
+
 Serão apresentados dois tipos de instalação do Elastic: 
 1) Instalação Single-node utilizando os binários para Windows;
 2) Instalação em cluster utilizando conteineres em uma máquina virtual Linux.
@@ -19,11 +21,11 @@ network.host: localhost
 http.port: 9200
 ~~~
 
-* Com o bloco de notas, descomente os parâmetros abaixo no arquivo **config/jvm.options**, retirando os # e os espaços e ajustando de acordo com a quantidade de memória que pretende disponibilizar ao JVM.
+* Com o bloco de notas, descomente os parâmetros abaixo no arquivo **config/jvm.options**, retirando os # e os espaços e ajustando de acordo com a quantidade de memória que pretende disponibilizar ao JVM. No exemplo abaixo será utilizado 4Gb de memória RAM para a JVM.
 
 ~~~Parâmetros
--Xms2g
--Xmx2g
+-Xms4g
+-Xmx4g
 ~~~
 
 * Execute o arquivo **bin/elasticsearch.bat**.

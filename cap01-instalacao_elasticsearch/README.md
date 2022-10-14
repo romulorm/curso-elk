@@ -19,7 +19,7 @@ network.host: localhost
 http.port: 9200
 ~~~
 
-* Com o bloco de notas, descomente os parâmetros abaixo no arquivo **config/jvm.options**, retirando os # e os espaços, ajustando de acordo com a quantidade de memória que irá disponibilizar ao JVM.
+* Com o bloco de notas, descomente os parâmetros abaixo no arquivo **config/jvm.options**, retirando os # e os espaços e ajustando de acordo com a quantidade de memória que pretende disponibilizar ao JVM.
 
 ~~~Parâmetros
 -Xms2g

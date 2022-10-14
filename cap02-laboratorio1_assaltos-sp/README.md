@@ -40,30 +40,35 @@ Laboratório envolvendo um dataset de Assaltos em SP.
 * Clique no botão **Save & Close**;
 * Observe que quanto mais registros na área, mais vermelho aparecerá.
 * Clique em Save, defina o nome do mapa como **Mapa de assaltos em SP** e escolha New para criar um Dashboard onde o mapa será exibido.
-* Clique em Save novamente para salvar o Dashboard atual. Defina o nome de **Painel de Assaltos em SP**.
+* Clique em **Save & Go to Dashboard**. Clique no botão Save novamente e defina o nome do dashboard para **Painel de Assaltos em SP**.
+* Arraste o mapa para a direita de modo que ele ocupe toda a tela.
 
 ### Adicionando mais informações ao Dashboard
 
 
-##### Gráfico Pizza "Top assaltos por bairro"
+##### Gráfico Pizza/Torta "Top assaltos por bairro"
 
 Criando um gráfico do tipo Pizza ou Torta com os bairros com mais ocorrências de assaltos.
 
-* Acesse a opção **Visualize Library**, na seção Analytics do Kibana;
+* Acesse o botão **Create visualization** do Dashboard, ou a opção **Visualize Library**na seção Analytics do Kibana;
 * Clique no botão **Create visualization**;
 * Selecione **Lens**
-* No tipo de gráfico, mude de "Bar vertical stacked" para **Pie**;
+* No tipo de gráfico, mude de **Bar vertical stacked** para **Pie**;
 * Arraste o campo **bairro** para o campo "Slice by";
-* No campo "Size by", clique em "Add or drag..." e selecione **Count**;
+* No campo "Size by", clique em "Add or drag..." e selecione **Count** e depois em Close.
 * Vamos ajustar a visualização retirando o agrupamento "Other" e retirando o bairro "São Paulo".
 * Clique em **Top 5 values of bairro** e altere o campo **Number of values** para **10**;
 * Clique em Advanced e ajuste os campos abaixo:
-    - Desative "Group other values as Other"
-    - Em "Exclude values", escreva "São Paulo", que não é um bairro.
-* Aperte "Close";
-* Clique em "Save" e coloque o nome "Top assaltos por bairro".
-* Selecione o Dashboard **Painel de Assaltos em SP** salvo anteriormente.
-* Clique em "Save" novamente para salvar o Dashboard.
+    - Desative **Group other values as Other**
+    - Em "Exclude values", escreva **São Paulo**, que não é um bairro.
+    - em "Name" coloque o nome **Top 10 assaltos por bairro**.
+* Aperte "Close".
+
+* Clique em Save. Coloque o Title como **Top 10 Assaltos por bairro**;
+* Selecione o Dashboard **Painel de Assaltos em SP** salvo anteriormente, lique em **Save and go to Dashboard**.
+* Clique em **Save** novamente para salvar o Dashboard.
+
+---
 
 ##### Gráfico Contador (Metric)  "Top assaltos por bairro"
 
@@ -74,20 +79,32 @@ Criando contadores mostrando os bairros com mais ocorrências.
 * Selecione **Lens**
 * No tipo de gráfico, mude de "Bar vertical stacked" para **Metric**;
 * Arraste o campo **Records** para o campo "Primary metric";
-* Arraste o campo **Bairro** para o campo "Break down by";
-* Clique em **Top 5 values of bairro** e altere o campo **Number of values** para **9**;
+* Arraste o campo **registrou_bo** para o campo "Secondary metric";
+* Arraste o campo **bairro** para o campo "Break down by".
+
+* Clique em **Top 5 values of bairro** e altere o campo **Number of values** para **12**;
 * Clique em Advanced e ajuste os campos abaixo:
     - Desative "Group other values as Other"
     - Em "Exclude values", escreva "São Paulo", que não é um bairro.
+    - em "Name" coloque o nome **Top 12 bairros**.
+    - Em Layout columns, altere para **4**;
 * Aperte "Close";
-* Arraste o campo **registrou_bo** para o campo "Secondary metric";
+
 * Clique em **Unique count of registrou_bo** e altere a Function para **Count**;
-* Clique em Advanced e em "Filter by" coloque "registrou_bo:"VERDADEIRO";
+* Clique em Advanced e em "Filter by" coloque **registrou_bo:"VERDADEIRO"**;
+* Em Name coloque **Contador registro de BO**;
 * Aperte "Close";
-* Será mostrado o número de Ocorrências em que foi registrado o Boletim de Ocorrências.
-* Clique em "Save" e coloque o nome "Contador assaltos por bairro".
-* Selecione o Dashboard **Painel de Assaltos em SP** salvo anteriormente.
-* Clique em "Save" novamente para salvar o Dashboard.
+* Verifique que além do total de ocorrências do bairro, será mostrado o número de Ocorrências em que foi registrado o Boletim de Ocorrência.
+
+* Clique em **Count of records** e altere a Function para **Count**;
+* Em Name coloque **Contador assalto/B.O.**;
+* Aperte "Close";
+
+* Clique em Save. Coloque o Title como **Contador de Assaltos por bairro**;
+* Selecione o Dashboard **Painel de Assaltos em SP** salvo anteriormente, lique em **Save and go to Dashboard**.
+* Clique em **Save** novamente para salvar o Dashboard.
+
+---
 
 ##### Tabela "Top 10 prejuizo/bairro/sexo"
 
@@ -103,10 +120,11 @@ Criando uma tabela mostrando o prejuízo das vítimas desmembrado por bairro e p
 
 * Clique em **Median of valor_prejuizo** no campo Metrics;
 * Selecione a Function **Sum**;
-* No campo Name coloque **Prejuizo**;
+* No campo Name coloque **Soma do prejuízo**;
+* Aperte "Close";
 
 * Clique em **Top 5 values of bairro** e altere o campo **Number of values** para **10**;
-* No campo **Rank by** deixe selecionado **Prejuizo**;
+* No campo **Rank by** deixe selecionado **Soma do prejuízo**;
 * Clique em Advanced e ajuste os campos abaixo:
     - Desative "Group other values as Other"
     - Em "Exclude values", escreva "São Paulo", que não é um bairro.
@@ -114,15 +132,19 @@ Criando uma tabela mostrando o prejuízo das vítimas desmembrado por bairro e p
 * Aperte "Close";
 
 * Clique em **Top 3 values of sexo** e altere o campo **Number of values** para **2**;
-* No campo **Rank by** deixe selecionado **Alphabetical**;
+* No campo **Rank by** deixe selecionado **Soma do prejuízo**;
+* No campo Name coloque **Sexo**;
 * Aperte "Close";
 
-* Clique em Save e selecione o Dashboard **Painel de Assaltos em SP** salvo anteriormente.
-* Clique em "Save" novamente para salvar o Dashboard.
+* Clique em Save. Coloque o Title como **Top 10 prejuizo/bairro/sexo**;
+* Selecione o Dashboard **Painel de Assaltos em SP** salvo anteriormente, lique em **Save and go to Dashboard**.
+* Clique em **Save** novamente para salvar o Dashboard.
+
+---
 
 ##### Mapa de palavras "Top 10 ocorrências por bairro"
 
-Criando um Mapa de palavras mostrando com os bairros com maiores ocorrências de assaltos.
+Criando um Mapa de palavras (tag cloud) mostrando com os bairros com maiores ocorrências de assaltos.
 
 * Acesse a opção **Visualize Library**, na seção Analytics do Kibana;
 * Clique no botão **Create visualization**;
@@ -130,8 +152,7 @@ Criando um Mapa de palavras mostrando com os bairros com maiores ocorrências de
 * Selecione **Tag cloud**;
 * Selecione o índice **assaltos-sp**;
 * Em Metrics, expanda **Tag size**, e em Custom label, escreva **Contador**;
-* Em Buckets, clique em Add, clique em Tags;
-* Selecione Terms;
+* Em Buckets, clique em Add, clique em Tags e selecione **Terms**;
 * Em Field, selecione **bairro**;
 * Em Size, digite **15**;
 * Em Custom label, escreva **Bairros com maior índice de assaltos**;
@@ -139,7 +160,7 @@ Criando um Mapa de palavras mostrando com os bairros com maiores ocorrências de
 * Em Exclude, digite **São Paulo**;
 * Clique em **Update**;
 * Clique em **Save**;
-* Digite o nome **Mapa de palavras**;
+* Digite o nome **Mapa de palavras/bairros**;
 * Clique em Save e selecione o Dashboard **Painel de Assaltos em SP** salvo anteriormente.
 * Clique em **Save and go to Dashboard**;
 * No Dashboard, clique em **Save** novamente para salvar o Dashboard.

@@ -15,6 +15,7 @@ Laboratório envolvendo um dataset de Assaltos em SP.
 * Vai dar falha em um registro. Desconsidere.
 * Clique em **View index in Discover**.
 
+
 ### Criando Mapas
 
 #### Mapa de Assaltos em SP
@@ -43,10 +44,11 @@ Laboratório envolvendo um dataset de Assaltos em SP.
 * Clique em **Save & Go to Dashboard**. Clique no botão Save novamente e defina o nome do dashboard para **Painel de Assaltos em SP**.
 * Arraste o mapa para a direita de modo que ele ocupe toda a tela.
 
+
 ### Adicionando mais informações ao Dashboard
 
 
-##### Gráfico Pizza/Torta "Top assaltos por bairro"
+#### Gráfico Pizza/Torta "Top assaltos por bairro"
 
 Criando um gráfico do tipo Pizza ou Torta com os bairros com mais ocorrências de assaltos.
 
@@ -70,7 +72,7 @@ Criando um gráfico do tipo Pizza ou Torta com os bairros com mais ocorrências 
 
 ---
 
-##### Gráfico Contador (Metric)  "Top assaltos por bairro"
+#### Gráfico Contador (Metric)  "Top assaltos por bairro"
 
 Criando contadores mostrando os bairros com mais ocorrências.
 
@@ -106,7 +108,7 @@ Criando contadores mostrando os bairros com mais ocorrências.
 
 ---
 
-##### Tabela "Top 10 prejuizo/bairro/sexo"
+#### Tabela "Top 10 prejuizo/bairro/sexo"
 
 Criando uma tabela mostrando o prejuízo das vítimas desmembrado por bairro e por sexo.
 
@@ -142,7 +144,7 @@ Criando uma tabela mostrando o prejuízo das vítimas desmembrado por bairro e p
 
 ---
 
-##### Mapa de palavras "Top 10 ocorrências por bairro"
+#### Mapa de palavras "Top 10 ocorrências por bairro"
 
 Criando um Mapa de palavras (tag cloud) mostrando com os bairros com maiores ocorrências de assaltos.
 

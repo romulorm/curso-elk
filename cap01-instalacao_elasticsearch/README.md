@@ -59,7 +59,7 @@ elasticsearch.ssl.verificationMode: none
 
 ## Montando o ambiente
 
-Caso já tenha uma máquina Linux, avance para o passo 3.
+Caso já tenha uma máquina Ubuntu Linux, avance para o passo 3.
 
 ### 1) Instalando o Virtualbox
 * Instale no Virtualbox: https://download.virtualbox.org/virtualbox/6.1.36/VirtualBox-6.1.36-152435-Win.exe

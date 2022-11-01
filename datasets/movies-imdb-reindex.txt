@@ -1,0 +1,42 @@
+PUT movies-new
+{
+  "mappings": {
+    "properties": {
+      "movie_plot": {
+        "type": "text"
+      },
+      "movie_director": {
+        "type": "keyword"
+      },
+      "movie_avg_rating": {
+        "type": "float"
+      },
+      "movie_year": {
+        "type": "keyword"
+      },
+      "movie_title": {
+        "type": "keyword",
+        "fields": {
+          "search": {
+            "type": "text"
+          }
+        }
+      }
+      
+    }
+  }
+}
+
+
+
+
+
+POST _reindex
+{
+  "source": {
+    "index": "movies"
+  },
+  "dest": {
+    "index":  "movies-new"
+  }
+}

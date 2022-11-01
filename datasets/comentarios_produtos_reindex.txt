@@ -1,0 +1,10 @@
+POST _reindex?wait_for_completion=false
+{
+  "source": {
+    "index": "comentarios-produtos"
+  },
+  "dest": {
+    "index": "comentarios-produtos-sentimento",
+    "pipeline": "sentiment"
+  }
+}

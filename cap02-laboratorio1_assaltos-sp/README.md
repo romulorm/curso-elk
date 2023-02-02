@@ -123,6 +123,8 @@ Criando uma tabela mostrando o prejuízo das vítimas desmembrado por bairro e p
 * Clique em **Median of valor_prejuizo** no campo Metrics;
 * Selecione a Function **Sum**;
 * No campo Name coloque **Soma do prejuízo**;
+* Em Value format escolha Number e em Decimals digite 2
+* Em Summary Row coloque Sum e em Summary Label digite Total
 * Aperte "Close";
 
 * Clique em **Top 5 values of bairro** e altere o campo **Number of values** para **10**;
